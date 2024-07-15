@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+
+<div class="container">
+    {% for i in info %}
+        <div class="box">
+            <a href="{{ url_for('about', course_id=i.id )}}">
+                <div class="title_course">
+                    <h2> {{ i.name[:13] | title }}</h2>
+                </div>
+            </a>
+            <p class="price">{{ i.price }} руб/мес </p>
+            <p class="info">{{ i.info[:40] | capitalize }}</p>
+            <h4 class="buy"><a href="#"> Купить </a></h4>
+
+
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}

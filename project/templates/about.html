@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+<div class="about">
+    {% if info %}
+            <h2> {{ info. name | title}} </h2>
+            <p> {{info.info | capitalize }} </p>
+    {% else %}
+        <h4> Информации о курсе пока нет </h4>
+    {% endif %}
+    <hr>
+    <p>Полную информацию о курсах вы можете получить на сайте <a href="https://online.top-academy.ru/">Компьютерная Академия TOP</a></p>
+
+</div>
+
+
+{% endblock content %}
